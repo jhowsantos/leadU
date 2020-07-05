@@ -29,7 +29,7 @@ const slides = [
   },
 ];
 
-const Onboarding = () => {
+const Onboarding = (props) => {
   useEffect(() => {
     BackgroundColor.setColor('#FFFFFF');
   }, []);
@@ -58,7 +58,10 @@ const Onboarding = () => {
 
   const _renderDoneButton = () => {
     return (
-      <TouchableOpacity style={styles.containerButton} onPress={() => {}}>
+      <TouchableOpacity
+        style={styles.containerButton}
+        onPress={() => props.navigation.navigate('ChooseAction')}
+      >
         <Text style={styles.textButton}>PRÓXIMA</Text>
       </TouchableOpacity>
     );
