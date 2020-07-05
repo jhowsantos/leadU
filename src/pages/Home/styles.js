@@ -115,6 +115,52 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     color: '#FFF',
   },
+
+  containerFloatButton: {
+    height: 50,
+    width: width * 0.55,
+    position: 'relative',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    bottom: 18,
+    left: width * 0.22,
+  },
+
+  floatButtonCog: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 50,
+    width: 50,
+    borderRadius: 25,
+    backgroundColor: '#F2F2F2',
+    elevation: 5,
+  },
+
+  floatButtonMic: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 50,
+    width: 50,
+    borderRadius: 25,
+    backgroundColor: '#F2F2F2',
+    elevation: 5,
+  },
+
+  floatButtonCart: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: 50,
+    width: 50,
+    borderRadius: 25,
+    backgroundColor: '#F2F2F2',
+    elevation: 5,
+  },
+
+  iconFloat: {
+    fontSize: 26,
+    color: '#BDBDBD',
+  },
 });
 
 export default styles;

@@ -95,7 +95,7 @@ const Home = () => {
   const [selectedLast, setSelectedlast] = useState('');
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.containerMenu}>
         <Text>Menu</Text>
       </View>
@@ -225,6 +225,19 @@ const Home = () => {
         >
           <Grid />
         </LineChart>
+      </View>
+      <View style={styles.containerFloatButton}>
+        <TouchableOpacity style={styles.floatButtonCog} onPress={() => {}}>
+          <FontAwesome name="cog" style={styles.iconFloat} />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.floatButtonMic} onPress={() => {}}>
+          <Ionicons name="mic-outline" style={styles.iconFloat} />
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.floatButtonCart} onPress={() => {}}>
+          <Ionicons name="cart-outline" style={styles.iconFloat} />
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );
