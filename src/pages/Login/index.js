@@ -3,14 +3,16 @@ import { View, TouchableOpacity, Text, Image, TextInput } from 'react-native';
 
 import styles from './styles';
 
-const Login = () => {
+const Login = (props) => {
   const [disable, setDisable] = useState(true);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const verifyFields = () => {
-    if (email > 0 && password > 0) {
+    if (email.length > 0 && password.length > 0) {
       setDisable(false);
+    } else {
+      setDisable(true);
     }
   };
 
@@ -27,7 +29,7 @@ const Login = () => {
           />
           <TextInput
             onChangeText={(text) => setEmail(text)}
-            onBlur={verifyFields}
+            onBlur={() => verifyFields()}
             placeholder="Email"
             style={styles.textInput}
           />
@@ -40,7 +42,7 @@ const Login = () => {
           />
           <TextInput
             onChangeText={(text) => setPassword(text)}
-            onBlur={verifyFields}
+            onBlur={() => verifyFields()}
             placeholder="Senha"
             style={styles.textInput}
           />
@@ -53,7 +55,7 @@ const Login = () => {
         <TouchableOpacity
           disabled={disable}
           style={disable ? styles.buttonDisable : styles.buttonAccess}
-          onPress={() => {}}
+          onPress={() => props.navigation.navigate('Home')}
         >
           <Text style={disable ? styles.textAccessDisable : styles.textAccess}>
             Entrar
