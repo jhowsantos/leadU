@@ -84,12 +84,12 @@ const chartInfo = {
   datasets: [
     {
       data: [0, 15, 12, 20, 50, 32],
-      strokeWidth: 3, // optional
+      strokeWidth: 3,
     },
   ],
 };
 
-const Home = () => {
+const Home = (props) => {
   const [selectedChannel, setSelectedChannel] = useState('');
   const [selectedSemester, setSelectedSemester] = useState('');
   const [selectedLast, setSelectedlast] = useState('');
@@ -121,7 +121,10 @@ const Home = () => {
           showsHorizontalScrollIndicator={false}
           data={data}
           renderItem={({ item }) => (
-            <TouchableOpacity style={styles.item} onPress={() => {}}>
+            <TouchableOpacity
+              style={styles.item}
+              onPress={() => props.navigation.navigate('SellInformation')}
+            >
               <View style={styles.iconContainer}>
                 <FontAwesome name={item.channel} style={styles.itemIcon} />
               </View>
