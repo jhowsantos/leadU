@@ -7,10 +7,24 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingBottom: 20,
   },
+
   containerMenu: {
-    height: 75,
+    height: 76,
     paddingTop: 22,
+    paddingLeft: 22,
   },
+
+  menuItem: {
+    fontSize: 26,
+    color: '#F9386A',
+  },
+
+  textMenu: {
+    fontSize: 16,
+    paddingLeft: 8,
+    color: '#312F4E',
+  },
+
   containerTitle: {
     height: 56,
     paddingTop: 20,
