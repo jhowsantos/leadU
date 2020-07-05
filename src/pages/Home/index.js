@@ -97,7 +97,13 @@ const Home = () => {
   return (
     <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
       <View style={styles.containerMenu}>
-        <Text>Menu</Text>
+        <TouchableOpacity
+          style={{ flexDirection: 'row', alignItems: 'center' }}
+          sonPress={() => {}}
+        >
+          <FontAwesome name="bars" style={styles.menuItem} />
+          <Text style={styles.textMenu}>menu</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.containerTitle}>
         <Text style={styles.title}>Visão Geral</Text>
