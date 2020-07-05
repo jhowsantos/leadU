@@ -35,7 +35,7 @@ const Routes = createAppContainer(
         },
       },
     },
-    { initialRouteName: 'Onboarding' }
+    { initialRouteName: 'Home' }
   )
 );
 

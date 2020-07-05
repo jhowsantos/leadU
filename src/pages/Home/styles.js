@@ -5,13 +5,15 @@ const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingBottom: 20,
   },
   containerMenu: {
     height: 75,
     paddingTop: 22,
   },
   containerTitle: {
-    height: 50,
+    height: 56,
+    paddingTop: 20,
     paddingHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -19,6 +21,7 @@ const styles = StyleSheet.create({
   },
 
   title: {
+    width: 144,
     fontSize: 24,
     fontStyle: 'normal',
     fontWeight: 'bold',
@@ -33,7 +36,35 @@ const styles = StyleSheet.create({
   },
 
   containerChart: {
-    height: 195,
+    height: 220,
+    marginTop: 20,
+  },
+  containerChartComparative: {
+    height: 340,
+    marginTop: 112,
+  },
+
+  containerTitleChart: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    height: 42,
+    marginTop: 15,
+  },
+
+  textChart: {
+    fontSize: 14,
+    fontStyle: 'normal',
+    fontWeight: 'bold',
+    color: '#696D8C',
+    paddingLeft: 8,
+  },
+
+  circle: {
+    width: 12,
+    height: 12,
+    borderRadius: 6,
+    backgroundColor: '#27AE60',
+    marginLeft: 18,
   },
 
   item: {
