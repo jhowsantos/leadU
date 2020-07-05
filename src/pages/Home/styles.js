@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
   containerTitle: {
     height: 56,
     paddingTop: 20,
-    paddingHorizontal: 20,
+    paddingLeft: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

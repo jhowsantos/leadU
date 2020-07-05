@@ -90,7 +90,9 @@ const chartInfo = {
 };
 
 const Home = () => {
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedChannel, setSelectedChannel] = useState('');
+  const [selectedSemester, setSelectedSemester] = useState('');
+  const [selectedLast, setSelectedlast] = useState('');
 
   return (
     <ScrollView style={styles.container}>
@@ -100,12 +102,11 @@ const Home = () => {
       <View style={styles.containerTitle}>
         <Text style={styles.title}>Visão Geral</Text>
         <Picker
-          selectedValue={selectedValue}
+          selectedValue={selectedLast}
           style={{ height: 50, width: 120 }}
-          onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+          onValueChange={(itemValue, itemIndex) => setSelectedlast(itemValue)}
         >
-          <Picker.Item label="Últimas" value="ultimas" />
-          <Picker.Item label="JavaScript" value="js" />
+          <Picker.Item label="Últimas" value="whatsapp" />
         </Picker>
       </View>
       <View style={styles.containerItems}>
@@ -146,6 +147,18 @@ const Home = () => {
       <View style={styles.containerChart}>
         <View style={styles.containerTitle}>
           <Text style={styles.title}>Desempenho</Text>
+          <Picker
+            selectedValue={selectedChannel}
+            style={{ height: 50, width: 190 }}
+            onValueChange={(itemValue, itemIndex) =>
+              setSelectedChannel(itemValue)
+            }
+          >
+            <Picker.Item label="Canal:WhatsApp" value="whatsapp" />
+            <Picker.Item label="Canal:Instagram" value="instagram" />
+            <Picker.Item label="Canal:Facebook" value="facebook" />
+            <Picker.Item label="Canal:Site" value="site" />
+          </Picker>
         </View>
         <View style={styles.containerTitleChart}>
           <View style={styles.circle} />
@@ -162,7 +175,15 @@ const Home = () => {
       <View style={styles.containerChartComparative}>
         <View style={styles.containerTitle}>
           <Text style={styles.title}>Comparativo Canais</Text>
-          <Text>Canal: WhatsApp</Text>
+          <Picker
+            selectedValue={selectedSemester}
+            style={{ height: 50, width: 140 }}
+            onValueChange={(itemValue, itemIndex) =>
+              setSelectedSemester(itemValue)
+            }
+          >
+            <Picker.Item label="Semestre" value="semestre" />
+          </Picker>
         </View>
         <View style={styles.containerTitleChart}>
           <View
