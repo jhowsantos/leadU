@@ -4,6 +4,7 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import Onboarding from '~/pages/Onboarding';
 import ChooseAction from '~/pages/ChooseAction';
 import Login from '~/pages/Login';
+import Home from '~/pages/Home';
 
 // Routes
 const Routes = createAppContainer(
@@ -27,8 +28,14 @@ const Routes = createAppContainer(
           header: null,
         },
       },
+      Home: {
+        screen: Home,
+        navigationOptions: {
+          header: null,
+        },
+      },
     },
-    { initialRouteName: 'Login' }
+    { initialRouteName: 'Onboarding' }
   )
 );
 
