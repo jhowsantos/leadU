@@ -85,6 +85,23 @@ const styles = StyleSheet.create({
     backgroundColor: '#F2F2F2',
   },
 
+  itemContainerExpanded: {
+    height: 130,
+    width: 320,
+    flexDirection: 'row',
+    marginBottom: 16,
+    borderRadius: 10,
+    paddingLeft: 15,
+    paddingTop: 15,
+    backgroundColor: '#F2F2F2',
+  },
+
+  image: {
+    width: 85,
+    height: 100,
+    borderRadius: 10,
+  },
+
   name: {
     fontSize: 16,
     color: '#250048',
@@ -94,6 +111,19 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: '#333333',
     textDecorationLine: 'underline',
+    paddingTop: 5,
+  },
+
+  priceItem: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#333333',
+    paddingTop: 5,
+  },
+
+  client: {
+    fontSize: 12,
+    color: '#333333',
     paddingTop: 5,
   },
 

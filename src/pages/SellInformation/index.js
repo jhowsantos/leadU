@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, FlatList, TouchableOpacity, Image } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome5';
 
@@ -11,22 +11,38 @@ const data = [
     name: 'Camisa Masculina P',
     orderPurchase: 155876,
     image: require('../../assets/t-shirt.png'),
+    price: '49,99',
+    client: 'Luiza Santos',
   },
   {
     id: 2,
     name: 'Camisa Feminina M',
     orderPurchase: 144665,
     image: require('../../assets/t-shirt.png'),
+    price: '49,99',
+    client: 'José Pedro',
   },
   {
     id: 3,
     name: 'Chinelo Sunset',
     orderPurchase: 147858,
     image: require('../../assets/t-shirt.png'),
+    price: '29,99',
+    client: 'Pedro Henrique',
   },
 ];
 
 const SellInformation = () => {
+  const [collapsed, setCollapsed] = useState(true);
+
+  const toggleExpanded = () => {
+    if (collapsed) {
+      setCollapsed(false);
+    } else {
+      setCollapsed(true);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.containerMenu}>
@@ -58,20 +74,62 @@ const SellInformation = () => {
           showsVerticalScrollIndicator={false}
           data={data}
           renderItem={({ item }) => (
-            <View style={styles.itemContainer}>
-              <View style={{ width: '85%' }}>
-                <Text style={styles.name}>{item.name}</Text>
-                <Text style={styles.order}>Pedido {item.orderPurchase}</Text>
-              </View>
-              <View style={{ width: '15%' }}>
-                <TouchableOpacity style={{ height: 70 }} onPress={() => {}}>
-                  <Ionicons
-                    name="chevron-down-outline"
-                    style={styles.chevron}
-                  />
-                </TouchableOpacity>
-              </View>
-            </View>
+            <>
+              {!collapsed ? (
+                <View style={styles.itemContainer}>
+                  <View style={{ width: '85%' }}>
+                    <Text style={styles.name}>{item.name}</Text>
+                    <Text style={styles.order}>
+                      Pedido {item.orderPurchase}
+                    </Text>
+                  </View>
+                  <View style={{ width: '15%' }}>
+                    <TouchableOpacity
+                      style={{ height: 70 }}
+                      onPress={toggleExpanded}
+                    >
+                      <Ionicons
+                        name="chevron-down-outline"
+                        style={styles.chevron}
+                      />
+                    </TouchableOpacity>
+                  </View>
+                </View>
+              ) : (
+                <View style={styles.itemContainerExpanded}>
+                  <View style={{ width: '35%' }}>
+                    <Image
+                      source={require('../../assets/t-shirt.png')}
+                      style={styles.image}
+                    />
+                  </View>
+
+                  <View style={{ width: '65%', flexDirection: 'row' }}>
+                    <View style={{ width: '82%' }}>
+                      <Text style={styles.name}>{item.name}</Text>
+                      <Text style={styles.order}>
+                        Pedido {item.orderPurchase}
+                      </Text>
+                      <Text style={styles.priceItem}>R$ {item.price}</Text>
+                      <Text style={styles.client}>
+                        Pedido feito por {item.client}
+                      </Text>
+                    </View>
+                    <View style={{ width: '18%' }}>
+                      <TouchableOpacity
+                        style={{ height: 70, marginRight: 5 }}
+                        onPress={toggleExpanded}
+                      >
+                        <Ionicons
+                          name="chevron-up-outline"
+                          style={styles.chevron}
+                        />
+                      </TouchableOpacity>
+                    </View>
+                  </View>
+                </View>
+              )}
+            </>
           )}
           keyExtractor={(item) => item.id.toString()}
         />
