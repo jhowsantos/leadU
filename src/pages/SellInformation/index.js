@@ -33,7 +33,7 @@ const data = [
 ];
 
 const SellInformation = () => {
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   const toggleExpanded = () => {
     if (collapsed) {

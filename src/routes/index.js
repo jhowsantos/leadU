@@ -6,6 +6,7 @@ import ChooseAction from '~/pages/ChooseAction';
 import Login from '~/pages/Login';
 import Home from '~/pages/Home';
 import SellInformation from '~/pages/SellInformation';
+import NewSell from '~/pages/NewSell';
 
 // Routes
 const Routes = createAppContainer(
@@ -37,6 +38,12 @@ const Routes = createAppContainer(
       },
       SellInformation: {
         screen: SellInformation,
+        navigationOptions: {
+          header: null,
+        },
+      },
+      NewSell: {
+        screen: NewSell,
         navigationOptions: {
           header: null,
         },
