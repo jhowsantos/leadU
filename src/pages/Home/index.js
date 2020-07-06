@@ -244,7 +244,10 @@ const Home = (props) => {
           <Ionicons name="mic-outline" style={styles.iconFloat} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.floatButtonCart} onPress={() => {}}>
+        <TouchableOpacity
+          style={styles.floatButtonCart}
+          onPress={() => props.navigation.navigate('NewSell')}
+        >
           <Ionicons name="cart-outline" style={styles.iconFloat} />
         </TouchableOpacity>
       </View>
